@@ -1,5 +1,5 @@
 .custom {
-    border: 2px dashed black;
+    /* border: 2px dashed black; */
     position: absolute;
 }
 
@@ -9,6 +9,9 @@
     width: 375px;
     height:50px;
     padding: 2px;
+    text-align: center;
+    border-right: 5px darkblue solid;
+    border-bottom: 2px lightgrey solid;
 }
 
 .navbar{
@@ -18,6 +21,7 @@
     height: 50px;
     padding: 2px;
     text-align: center;
+    border-bottom: 2px lightgrey solid;
 }
 
 .left_column_top{
@@ -26,6 +30,8 @@
     width: 375px;
     height: 500px;
     padding: 2px;
+    border-bottom: 2px lightgrey solid;
+    border-right: 2px lightgrey solid;
 }
 
 .left_column_bottom{
@@ -34,6 +40,7 @@
     width: 375px;
     height: 250px;
     padding: 2px;
+    border-right: 2px lightgrey solid;
 }
 
 /* Right Column */
@@ -45,7 +52,6 @@
     padding: 2px;
     overflow: auto; /* Enables scrolling */
     position: relative;
-    border: 2px dashed black;
     background-color: #f0f4f8; /* Optional for better visualization */
 }
 
