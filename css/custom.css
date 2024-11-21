@@ -1,0 +1,17 @@
+/* Used strictly to overwrite the Bootstrap Theme */
+
+/* italizes the text */
+.quote{
+    font-style: italic;
+    font-size: 20px;
+}
+
+/* bolds text */
+.bold{
+    font-weight: bold;
+}
+
+/* centers text */
+.center{
+    text-align: center;
+}

@@ -1,0 +1,136 @@
+<!-- 
+Joseph Tsai
+Section 001
+Dr. Gaskin
+IS 201
+
+Project Requirements:
+X Ordered list with unordered list
+X An image
+X Embedded YouTube video (use AI)
+X On-page anchor
+X Custom background color/image
+Tableau graph
+X Navigation to profession-looking pages
+X Small web app (Connections game)
+
+Custom stylesheet
+    X Four style definitions
+    X One for font color
+    X One for font family
+    X At least 3 divs
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry</title>
+    <link href="css/myStyles.css" rel="stylesheet" />
+    <link href="css/myLayout.css" rel="stylesheet" />   
+</head>
+<body>
+    <!-- Header (top left of page) -->
+    <div class="custom header">
+        <h1 id="top" class="bold">Chemistry</h1>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="custom navbar">
+        <a href="index.html">Home</a> |
+        <a href="education.html">Education</a> |
+        <a href="experience.html">Experience</a> |
+        <a href="skills.html">Skills</a> |
+        <a href="contact.html">Contact</a> |
+        <a href="connections_game.html">NYT Connections Game</a>
+    </div>
+
+    <!-- top left container -->
+    <div class="custom left_column_top">   
+        <!-- image of ethanol molecule -->
+        <img src="assets/img/ethanol_molecule_with_bg.jpg" alt="ethanol molecule" class="img">
+
+        <!-- ordered list -->
+        <ol>
+            <li> What is Chemistry?
+                <ul>
+                    <li>Chemistry is the study of matter, specifically atoms and molecules</li>
+                    <li>It focuses on how these atoms and molecules interact with each other</li>
+                    <li>Chemistry is hard, I'm losing my mind, help me</li>
+                </ul>
+            </li>
+            
+            <li> How is Chemistry? 
+                <ul>
+                    <li>Chemistry is doing well</li>
+                    <li>It receives endless vitality from the blood of students</li>
+                </ul>
+            </li>
+
+            <li> Why is Chemistry?
+                <ul>
+                    <li>idk, you tell me</li>
+                </ul>
+            </li>
+        </ol> 
+    </div>
+
+    <div class="custom left_column_bottom">
+        <!-- embedded Youtube Video  -->
+        <iframe 
+            width="375" 
+            height="250" 
+            src="https://www.youtube.com/embed/NIVkBs7oWDI" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <div class="custom right_column">
+    <div class="tableau-container">
+        <div class='tableauPlaceholder' id='viz1732148076714' style='position: relative'>
+            <noscript>
+                <a href='#'>
+                    <img alt='periodic table of elements ' src='https://public.tableau.com/static/images/pe/periodictable_16002719133750/periodictableofelements/1_rss.png' style='border: none' />
+                </a>
+            </noscript>
+            <object class='tableauViz'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='periodictable_16002719133750&#47;periodictableofelements' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https://public.tableau.com/static/images/pe/periodictable_16002719133750/periodictableofelements/1.png' /> 
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en-US' />
+            </object>
+        </div>
+    </div>
+</div>
+
+<script type='text/javascript'>
+    var divElement = document.getElementById('viz1732148076714');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    // Set explicit dimensions matching the Tableau graph size
+    vizElement.style.width = '1000px';
+    vizElement.style.height = '763px';
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+
+    
+    
+    <div class="custom footer">       
+        <a href="#top" style="font-size: 20px;">Back to Top</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+.custom {
+    border: 2px dashed black;
+    position: absolute;
+}
+
+.header{
+    top:5px;
+    left:5px;
+    width: 375px;
+    height:50px;
+    padding: 2px;
+}
+
+.navbar{
+    top:5px;
+    left: 393px;
+    right: 5px;
+    height: 50px;
+    padding: 2px;
+    text-align: center;
+}
+
+.left_column_top{
+    top:68px;
+    left:5px;
+    width: 375px;
+    height: 500px;
+    padding: 2px;
+}
+
+.left_column_bottom{
+    top:581px;
+    left:5px;
+    width: 375px;
+    height: 250px;
+    padding: 2px;
+}
+
+/* .right_column{
+    top:68px;
+    left:393px;
+    right:5px;
+    height:763px;
+    padding:2px;
+} */
+
+/* Wrapper to make the Tableau visualization responsive with scrolling */
+/* .tableau-container {
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    position: relative; 
+    border: 1px solid #ddd; 
+}  */
+
+/* Updated Right Column */
+/* .right_column {
+    top: 68px;
+    left: 393px;
+    right: 5px;
+    height: 763px; 
+    padding: 2px;
+    overflow: hidden; 
+    position: relative;
+    border: 2px dashed black; 
+} */
+
+/* Wrapper for Tableau visualization */
+.tableau-container {
+    width: 100%; /* Occupies full width of parent */
+    height: 100%; /* Occupies full height of parent */
+    overflow: auto; /* Allows scrolling when content exceeds dimensions */
+    position: relative;
+    box-sizing: border-box; /* Prevents unexpected size issues */
+}
+
+/* Ensures the .tableauViz fits and respects the container */
+.tableau-container .tableauViz {
+    width: 750px; /*Fixed width of the Tableau graph */
+    height: 763px; /*Fixed height of the Tableau graph*/
+    display: block; /* Ensures block layout */
+    margin: 0 auto; /* Centers content horizontally */
+    box-sizing: border-box;
+}
+
+.footer{
+    left:5px;
+    right:5px;
+    bottom: 0px;
+    height: 25px;
+    text-align: center;
+    position: fixed;
+    background-color: aliceblue;
+}

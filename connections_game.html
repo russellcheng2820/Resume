@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connections Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      margin-top: 20px;
+    }
+    #grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      max-width: 400px;
+      margin: 20px auto;
+    }
+    .tile {
+      padding: 15px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.2s;
+    }
+    .tile.selected {
+      background-color: #b3d9ff;
+    }
+    .tile.correct{
+        background-color: green;
+    }
+    #message {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: green;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Connections Game</h1>
+<p>Select four related words to form a group. Form all groups to win!</p>
+<div id="grid"></div>
+<div id="message"></div>
+<button id="restart" style="display: none;">Restart Game</button>
+
+<script>
+  const originalGroups = [
+    ["Mercury", "Venus", "Earth", "Mars"], // Planets
+    ["Red", "Blue", "Green", "Yellow"],    // Colors
+    ["Violin", "Piano", "Guitar", "Drums"], // Musical instruments
+    ["Lion", "Tiger", "Leopard", "Jaguar"] // Big cats
+  ];
+
+  let groups, tiles, selected, correctGroups;
+  const grid = document.getElementById("grid");
+  const message = document.getElementById("message");
+  const restartButton = document.getElementById("restart");
+
+  function initializeGame() {
+    groups = JSON.parse(JSON.stringify(originalGroups)); // Deep copy to reset groups
+    tiles = groups.flat();
+    tiles.sort(() => Math.random() - 0.5); // Shuffle tiles
+    selected = [];
+    correctGroups = 0;
+    message.textContent = "";
+    restartButton.style.display = "none";
+    grid.style.pointerEvents = "auto"; // Enable interaction
+    renderGrid();
+  }
+
+  function renderGrid() {
+    grid.innerHTML = "";
+    tiles.forEach((word, index) => {
+      const tile = document.createElement("div");
+      tile.className = "tile";
+      tile.textContent = word;
+      tile.onclick = () => handleTileClick(tile, word, index);
+      grid.appendChild(tile);
+    });
+  }
+
+  function handleTileClick(tile, word, index) {
+    if (tile.classList.contains("selected")) {
+      tile.classList.remove("selected");
+      selected = selected.filter((item) => item.index !== index);
+    } else if (selected.length < 4) {
+      tile.classList.add("selected");
+      selected.push({ word, index });
+    }
+    if (selected.length === 4) checkGroup();
+  }
+
+  function checkGroup() {
+    const words = selected.map((item) => item.word);
+    const groupIndex = groups.findIndex((group) =>
+        group.every((word) => words.includes(word))
+    );
+
+    if (groupIndex !== -1) {
+        // Valid group found
+        selected.forEach((item) => {
+            const tile = grid.children[item.index];
+            tile.style.backgroundColor = "#d4edda";
+            tile.style.pointerEvents = "none";
+        });
+
+        // Remove matched group from both groups and tiles
+        const matchedGroup = groups.splice(groupIndex, 1)[0];
+        tiles = tiles.filter((word) => !matchedGroup.includes(word));
+
+        correctGroups++;
+        if (correctGroups === originalGroups.length) {
+            message.textContent = "🎉 Congratulations! You found all the connections! 🎉";
+            grid.style.pointerEvents = "none"; // Disable further interaction
+            restartButton.style.display = "block";
+        }
+    } else {
+        alert("Not a valid group! Try again.");
+    }
+
+    selected = [];
+    renderGrid();
+}
+
+function renderGrid() {
+    grid.innerHTML = "";
+    tiles.forEach((word, index) => {
+        const tile = document.createElement("div");
+        tile.className = "tile";
+        tile.textContent = word;
+        tile.onclick = () => handleTileClick(tile, word, index);
+        grid.appendChild(tile);
+    });
+}
+
+
+  restartButton.onclick = initializeGame;
+
+  initializeGame();
+</script>
+</body>
+</html>
