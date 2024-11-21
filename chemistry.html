@@ -3,22 +3,6 @@ Joseph Tsai
 Section 001
 Dr. Gaskin
 IS 201
-
-Project Requirements:
-X Ordered list with unordered list
-X An image
-X Embedded YouTube video (use AI)
-X On-page anchor
-X Custom background color/image
-Tableau graph
-X Navigation to profession-looking pages
-X Small web app (Connections game)
-
-Custom stylesheet
-    X Four style definitions
-    X One for font color
-    X One for font family
-    X At least 3 divs
 -->
 
 <!DOCTYPE html>
@@ -89,46 +73,42 @@ Custom stylesheet
         </iframe>
     </div>
 
-    <div class="custom right_column">
-    <div class="tableau-container">
-        <div class='tableauPlaceholder' id='viz1732148076714' style='position: relative'>
-            <noscript>
-                <a href='#'>
-                    <img alt='periodic table of elements ' src='https://public.tableau.com/static/images/pe/periodictable_16002719133750/periodictableofelements/1_rss.png' style='border: none' />
-                </a>
-            </noscript>
-            <object class='tableauViz'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                <param name='embed_code_version' value='3' />
-                <param name='site_root' value='' />
-                <param name='name' value='periodictable_16002719133750&#47;periodictableofelements' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image' value='https://public.tableau.com/static/images/pe/periodictable_16002719133750/periodictableofelements/1.png' /> 
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='language' value='en-US' />
-            </object>
+    <!-- embedded Tableau graph -->
+    <div class="right_column">
+        <div class="tableau-container">
+            <div class='tableauPlaceholder' id='viz1732148076714'>
+                <noscript>
+                    <a href='#'>
+                        <img alt='periodic table of elements' src='https://public.tableau.com/static/images/pe/periodictable_16002719133750/periodictableofelements/1_rss.png' style='border: none' />
+                    </a>
+                </noscript>
+                <object class='tableauViz' style='width: 1366px; height: 877px;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                    <param name='embed_code_version' value='3' />
+                    <param name='site_root' value='' />
+                    <param name='name' value='periodictable_16002719133750&#47;periodictableofelements' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https://public.tableau.com/static/images/pe/periodictable_16002719133750/periodictableofelements/1.png' /> 
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='language' value='en-US' />
+                </object>
+            </div>
         </div>
     </div>
-</div>
-
-<script type='text/javascript'>
-    var divElement = document.getElementById('viz1732148076714');
-    var vizElement = divElement.getElementsByTagName('object')[0];
-    // Set explicit dimensions matching the Tableau graph size
-    vizElement.style.width = '1000px';
-    vizElement.style.height = '763px';
-    var scriptElement = document.createElement('script');
-    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-</script>
-
     
-    
+    <script type='text/javascript'>
+        var divElement = document.getElementById('viz1732148076714');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script>
+
     <div class="custom footer">       
         <a href="#top" style="font-size: 20px;">Back to Top</a>
     </div>
